@@ -37,7 +37,8 @@ app.use((req, res, next) => {
 app.use(cors);
 
 //Listening to the server
-app.listen(process.env.PORT || 3000, () => console.log("Server Started"));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log("Server Started"));
 
 /**
  * Instead of using bodyParser, express.json was used
