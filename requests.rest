@@ -1,0 +1,35 @@
+GET http://localhost:3000
+
+###
+
+GET http://localhost:3000/posts
+
+###
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "title":"Second Post",
+    "description": "Description"
+}
+
+### Specific post
+GET http://localhost:3000/posts/601ab440c5e0e028140a7ffe
+
+### non-existing post
+GET http://localhost:3000/posts/incorrectID
+
+### Specific post
+DELETE  http://localhost:3000/posts/601ab5965d859e15180e1e9f
+
+### non-existing post
+DELETE  http://localhost:3000/posts/incorrectID
+
+### Update
+PATCH http://localhost:3000/posts/601ab5965d859e15180e1e9f
+Content-Type: application/json
+
+{
+    "title": "updatedTitle",
+    "description": "updatedDescription"
+}
