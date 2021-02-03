@@ -5,7 +5,7 @@ GET http://localhost:3000
 GET https://restapi-express.herokuapp.com/posts
 
 ###
-POST http://localhost:3000/posts
+POST http://localhost:5000/posts
 Content-Type: application/json
 
 {
