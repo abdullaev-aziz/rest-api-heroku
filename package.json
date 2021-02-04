@@ -2,9 +2,9 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "app/app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon app/app.js"
+    "start": "nodemon src/server.js"
   },
   "keywords": [],
   "author": "",
