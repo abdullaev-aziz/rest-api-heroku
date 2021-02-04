@@ -1,5 +1,5 @@
 //Setting up environment variables
-require("dotenv").config();
+// require("dotenv").config();
 
 //setting up express
 const express = require("express");
@@ -8,14 +8,14 @@ const app = express();
 //connecting to MongoDB
 const { getMongoConnectURL } = require("./getMongoConnectURL");
 const mongoose = require("mongoose");
-const mongoUrl = getMongoConnectURL(
-  process.env.MONGO_CONNECT,
-  process.env.DBUSER,
-  process.env.DBPSW,
-  process.env.DBNAME
-);
-
-mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+// const mongoUrl = getMongoConnectURL(
+//   process.env.MONGO_CONNECT,
+//   process.env.DBUSER,
+//   process.env.DBPSW,
+//   process.env.DBNAME
+// );
+const PROD_MONGO_URL = 'mongodb+srv://aziz:8sFFTfNo7pUHLaYG@cluster0.knhl5.mongodb.net/rest-api-db?retryWrites=true&w=majority'
+mongoose.connect(PROD_MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on("error", (err) => console.error(err));
 db.once("open", () => console.log("Successfully connected to db"));
