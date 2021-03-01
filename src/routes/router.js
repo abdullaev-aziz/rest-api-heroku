@@ -4,7 +4,9 @@ const Post = require("../models/Post");
 
 //ROUTES
 router.get("/", (req, res) => {
-  res.send(`Home page via Router`);
+  res.send(`Please use the following API routes: 
+  GET/POST https://restapi-express.herokuapp.com/posts
+  DELETE/UPDATE https://restapi-express.herokuapp.com/posts/:id`);
 });
 
 //get all posts
