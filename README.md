@@ -1,5 +1,11 @@
 # rest-api-heroku
-## Basic Rest API supporting CRUD operations, built with Node.js/Express/MongoDB & deployed to Heroku
+## Basic Rest API supporting CRUD operations
+### Tech Stack
+Node.js/Express/MongoDB & deployed to Heroku
+
+### Source Code
+https://github.com/abdullaev-aziz/rest-api-heroku
+
 
 ## Routes:
 ### The default URL:
