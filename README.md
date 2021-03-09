@@ -18,5 +18,7 @@ More on that: https://devcenter.heroku.com/articles/procfile
 
 - Heroku couldn't load environment variables, because the .env file on my machine, even when exposed to the repo, wasn't properly used by heroku.
 Solved by setting environment variables using heroku CLI: 
-`heroku config:set ENV_VARIABLE_NAME=ENV_VALUE`
+`heroku config:set ENV_VARIABLE_NAME=ENV_VALUE`  
 More on that: https://devcenter.heroku.com/articles/config-vars#accessing-config-var-values-from-code
+
+App chashes after connecting to GitHub
