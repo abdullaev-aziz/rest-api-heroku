@@ -4,7 +4,7 @@ const Post = require("../models/Post");
 
 //ROUTES
 router.get("/", (req, res) => {
-  res.sendFile('index.html');
+  res.sendFile(__dirname + '/index.html');
 });
 
 //get all posts
