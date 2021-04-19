@@ -1,3 +1,4 @@
+const axios = require("axios");
 const express = require("express");
 const router = express.Router();
 const Post = require("../models/Post");
@@ -28,6 +29,20 @@ router.get("/posts/:id", async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
+
+router.get('/geocode', async(req, res) => {
+  try {
+    const {lat, long} = req.query;
+    const REQ_URL = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&result_type=postal_code&key=${process.env.GAPI}
+`;
+    const response = await axios.get(REQ_URL)
+    console.log(response.data)
+    res.json({zipcode: response.data.results[0].address_components[0].short_name})
+
+  } catch (err) {
+    res.status(400).json({message: err.message})
+  }
+})
 
 //create a post
 router.post("/posts", async (req, res) => {
