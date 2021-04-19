@@ -32,7 +32,9 @@ router.get("/posts/:id", async (req, res) => {
 
 router.get('/geocode', async(req, res) => {
   try {
-    const {lat, long} = req.query;
+    let {lat, long} = req.query;
+    lat = lat.toFixed(6);
+    long = long.toFixed(6);
     const REQ_URL = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${long}&result_type=postal_code&key=${process.env.GAPI}
 `;
     const response = await axios.get(REQ_URL)
